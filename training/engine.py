@@ -30,7 +30,7 @@ for episode in tqdm.tqdm(range(num_episodes)):
     state = env.reset()
     done = False
     episode_reward = 0
-    for iteration_number in range(1, MAX_ITERATIONS_NUMBER): # while not done:
+    for iteration_number in tqdm.tqdm(range(1, MAX_ITERATIONS_NUMBER), leave=False): # while not done:
         
         # Epsilon-greedy exploration strategy
         if random.uniform(0, 1) < epsilon:
@@ -52,7 +52,6 @@ for episode in tqdm.tqdm(range(num_episodes)):
         agent.update_target_network()
     if episode<5:
         epsilon -= 0.18
+    # save in pickle the agent
+    agent.save_pickle_agent("saves")
 
-
-# save in pickle the agent
-agent.save_pickle_agent("saves")

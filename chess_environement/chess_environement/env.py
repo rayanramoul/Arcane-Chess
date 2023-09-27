@@ -69,7 +69,7 @@ class ChessEnv(gym.Env):
         # Get the reward and check if the game is over
         done = self.board.is_game_over()
         state = self.translate_board()
-        print("Step state shape : ", state.shape)
+        # print("Step state shape : ", state.shape)
         return state, reward, done, {}
 
     def render(self, mode='human'):

@@ -4,12 +4,18 @@ import pickle
 import os
 import copy
 
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 from torch.autograd import Variable
 import numpy as np
+
+from torch.utils.tensorboard import SummaryWriter
+
+# Writer will output to ./runs/ directory by default
+writer = SummaryWriter()
 
 Transition = namedtuple('Transition',
                         ('state', 'action', 'next_state', 'reward'))

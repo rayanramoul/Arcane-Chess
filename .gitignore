@@ -4,3 +4,5 @@
 *.pkl
 *.pickle
 *.ipynb_checkpoints*
+*saves*
+*egg*
